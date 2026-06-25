@@ -1,0 +1,38 @@
+import 'package:flutter/material.dart';
+import 'package:responsive_dashboard/models/transaction_history_model.dart';
+import 'package:responsive_dashboard/widget/transaction_history_item.dart';
+
+class TransactionHistoryListView extends StatelessWidget {
+  const TransactionHistoryListView({super.key});
+  static const List<TransactionHistoryModel> item = [
+    TransactionHistoryModel(
+      title: 'Cash Withdrawal',
+      subTitle: '13 Apr, 2022 ',
+      amount: r'$20,129',
+      isWithdrawal: true,
+    ),
+    TransactionHistoryModel(
+      title: 'Landing Page project',
+      subTitle: '13 Apr, 2022 at 3:30 PM ',
+      amount: r'$2,000',
+      isWithdrawal: false,
+    ),
+    TransactionHistoryModel(
+      title: 'Juni Mobile App project',
+      subTitle: '13 Apr, 2022 at 3:30 PM ',
+      amount: r'$20,129',
+      isWithdrawal: false,
+    ),
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      padding: EdgeInsets.zero,
+      itemCount: item.length,
+      shrinkWrap: true,
+      itemBuilder: (context, index) {
+        return TransactionHistoryItem(transactionHistoryModel: item[index]);
+      },
+    );
+  }
+}
