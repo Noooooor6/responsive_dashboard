@@ -61,7 +61,7 @@ class MyCard extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 25),
+            Flexible(child: SizedBox(height: 16)),
           ],
         ),
       ),
